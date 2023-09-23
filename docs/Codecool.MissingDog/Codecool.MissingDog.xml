@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Codecool.MissingDog</name>
+    </assembly>
+    <members>
+        <member name="T:Codecool.MissingDog.Repository.DogRepository">
+            <summary>
+                Provides all needed methods on dogs data.
+            </summary>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.DogRepository.#ctor(Codecool.MissingDog.Repository.DataSource)">
+            <summary>
+                Initiates a new instance of DogRepository based on given DataSource.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.DogRepository.GetAllDogs">
+            <summary>
+                Gets all dogs from data.
+            </summary>
+            <returns> IEnumerable of all Dogs instances and nulls. </returns>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.DogRepository.GetDogById(System.Int32)">
+            <summary>
+                Gets a specific dog with given Id.
+            </summary>
+            <param name="id">dogId</param>
+            <returns> Dog instance or null. </returns>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.DogRepository.GetCountOfDogsForTheOwnerOfDogWithId(System.Int32)">
+            <summary>
+                Counts all dogs that are assigned to an owner of a dog with given Id.
+            </summary>
+            <param name="dogId">dogId</param>
+            <returns> Integer, representing Dogs count. </returns>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.DogRepository.GetOwnerPhoneNoByDogId(System.Int32)">
+            <summary>
+                Gets phone number of the dog owner with the given Id.
+            </summary>
+            <param name="dogId">dogId</param>
+            <returns> String, representing phone number. </returns>
+            
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.DogRepository.GetDogsBySociability(System.Boolean)">
+            <summary>
+                Gets all dogs with a given sociability.
+            </summary>
+            <param name="isSociable">isSociable</param>
+            <returns> IEnumerable of Dogs instances. </returns>
+        </member>
+        <member name="T:Codecool.MissingDog.Repository.OwnerRepository">
+            <summary>
+                Provides all needed methods on owners data.
+            </summary>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.OwnerRepository.#ctor(Codecool.MissingDog.Repository.DataSource)">
+            <summary>
+                Initiates a new instance of OwnerRepository based on given DataSource.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.OwnerRepository.GetAllOwners">
+            <summary>
+                Gets all owners from data.
+            </summary>
+            <returns> IEnumerable of all Owners instances and nulls. </returns>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.OwnerRepository.GetOwnerById(System.Int32)">
+            <summary>
+                Gets specific owner with given Id.
+            </summary>
+            <param name="id">id</param>
+            <returns> Owner instance or null. </returns>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.OwnerRepository.GetCountOfDogsOfSpecificBreedThisOwnerHas(System.Int32,System.Int32)">
+            <summary>
+                Gets count of dogs of specific breed that this owner has.
+            </summary>
+            <param name="ownerId">ownerId</param>
+            <param name="breedId">breedId</param>
+            <returns> Integer, representing count of Dogs. </returns>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.OwnerRepository.CountAverageActivityLevelOfThisOwnersDogs(System.Int32)">
+            <summary>
+                Counts an average dogs activitie levels of owner's with given Id or returns zero.
+            </summary>
+            <param name="ownerId">ownerId</param>
+            <returns> Double, representing average level. </returns>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.OwnerRepository.GetOldestDogOfThisOwner(System.Int32)">
+            <summary>
+                Gets the oldest dog of owner with given Id or returns null when none.
+            </summary>
+            <param name="ownerId">ownerId</param>
+            <returns> Dog instance or null </returns>
+        </member>
+        <member name="M:Codecool.MissingDog.Repository.OwnerRepository.CountDogsOfThisOwners(System.Int32)">
+            <summary>
+                Count dogs of owner with given Id.
+            </summary>
+            <param name="ownerId">ownerId</param>
+            <returns> Integer, representing Dogs count. </returns>
+        </member>
+    </members>
+</doc>
