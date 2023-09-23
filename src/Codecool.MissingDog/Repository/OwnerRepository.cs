@@ -27,7 +27,7 @@ namespace Codecool.MissingDog.Repository
         /// <returns> IEnumerable of all Owners instances and nulls. </returns>
         public IEnumerable<Owner> GetAllOwners()
         {
-            throw new NotImplementedException();
+            return _data.Owners;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Codecool.MissingDog.Repository
         /// <returns> Owner instance or null. </returns>
         public Owner GetOwnerById(int id)
         {
-            throw new NotImplementedException();
+            return _data.Owners.FirstOrDefault(x => x?.Id == id);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Codecool.MissingDog.Repository
         /// <returns> Integer, representing count of Dogs. </returns>
         public int GetCountOfDogsOfSpecificBreedThisOwnerHas(int breedId, int ownerId)
         {
-            throw new NotImplementedException();
+            return GetOwnerById(ownerId)?.Dogs.Count(x => x?.Breed.Id == breedId) ?? 0;
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Codecool.MissingDog.Repository
         /// <returns> Double, representing average level. </returns>
         public double CountAverageActivityLevelOfThisOwnersDogs(int ownerId)
         {
-            throw new NotImplementedException();
+            return GetOwnerById(ownerId)?.Dogs.Average(x => x?.Breed.ActivityLevel) ?? 0;
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Codecool.MissingDog.Repository
         /// <returns> Dog instance or null </returns>
         public Dog GetOldestDogOfThisOwner(int ownerId)
         {
-            throw new NotImplementedException();
+            return GetOwnerById(ownerId)?.Dogs.Where(x => x != null).OrderBy(x => x?.DateOfBirth).FirstOrDefault();
         }
 
         /// <summary>
